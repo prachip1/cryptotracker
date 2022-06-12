@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Tracker from "./Tracker";
 import MyNav from "./MyNav";
+import "./App.css";
 
 function App() {
   return (
