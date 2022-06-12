@@ -10,7 +10,7 @@ function App() {
       <MyNav />
      <Tracker />
      <Routes>
-      <Route exact path="/cryptotracker" element={<Home />} />
+      <Route exact path="/cryptotracker" element={<Tracker />} />
      
     </Routes>
     </Router>
