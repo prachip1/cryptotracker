@@ -9,7 +9,7 @@ function App() {
     <main className="bg-gray-900 w-screen lg:overflow-x-hidden">
       <Router>
       <MyNav />
-     <Tracker />
+     
      <Routes>
       <Route exact path="/cryptotracker" element={<Tracker />} />
      

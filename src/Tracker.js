@@ -27,7 +27,7 @@ export default function Tracker(){
 
   const handleChange = e => {
     setSearch(e.target.value);
-    console.log(e.target.value);
+
     
   }
  console.log("search value",search);
