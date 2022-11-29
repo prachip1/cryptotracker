@@ -13,7 +13,7 @@ export default function Tracker(){
 
   useEffect(()=>{
     axios
-    .get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=INR&order=market_cap_desc&per_page=100&page=1&sparkline=false')
+    .get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=INR&order=market_cap_desc&per_page=20&page=1&sparkline=false')
     .then(res => {
       setCoins(res.data);
     console.log(res.data);
@@ -27,7 +27,7 @@ export default function Tracker(){
 
   const handleChange = e => {
     setSearch(e.target.value);
-    console.log(e.target.value);
+
     
   }
  console.log("search value",search);
