@@ -11,13 +11,18 @@ export default function Tracker(){
  
 
 
+
+
   useEffect(()=>{
     axios
     .get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=INR&order=market_cap_desc&per_page=20&page=1&sparkline=false')
     .then(res => {
       setCoins(res.data);
     console.log(res.data);
+
     })
+
+    
     .catch(error => console.log(error));
   }, []);
 
@@ -27,7 +32,7 @@ export default function Tracker(){
 
   const handleChange = e => {
     setSearch(e.target.value);
-
+ 
     
   }
  console.log("search value",search);
@@ -36,8 +41,8 @@ export default function Tracker(){
 
 
  return(
-   <div className= "w-screen h-screen lg:overflow-x-hidden">
-     <div className="lg:flex justify-center mt-20 mb-40">
+   <div className="flex flex-col justify-center items-center lg:overflow-x-hidden h-full">
+     <div className="lg:flex justify-center mt-20 mb-20">
        
        <h1 className="text-white text-center font-sans text-xl m-0 p-0">Search a currency</h1>
        
@@ -48,9 +53,10 @@ export default function Tracker(){
          </form>
        
      </div>
-       
-
-      {
+     
+      {filteredCoins.length === 0 ? (
+        <p className="text-white">No Currency Found</p>
+      ) : (
       
       filteredCoins.map(coin => {
           return(
@@ -64,7 +70,7 @@ export default function Tracker(){
             volume={coin.total_volume}
               />
           );
-      })}
+      }))}
       
     
  
